@@ -1,0 +1,428 @@
+<?xml version="1.0" ?>
+<contents>
+  <product_info>
+    <product_name>MDM9150.LE.1.0</product_name>
+    <hlos_type cmm_var="HLOS_TYPE">LE</hlos_type>
+    <chipid cmm_var="CHIPID">MDM9150</chipid>
+  </product_info>
+  <builds_flat>
+    <build>
+      <name>common</name>
+      <role>common</role>
+      <chipset>MDM9150</chipset>
+      <build_id>MDM9150.LE.1.0-00100-NBOOT.NEFS.2KNAND.PROD-1</build_id>
+      <windows_root_path>.\</windows_root_path>
+      <linux_root_path>./</linux_root_path>
+      <image_dir>common</image_dir>
+      <download_file get_binary="True" minimized="true">
+        <file_name>partition.mbn</file_name>
+        <file_path>./</file_path>
+      </download_file>
+      <file_ref get_binary="True" partition="sec" minimized="true">
+        <file_name></file_name>
+        <file_path>common/sectools/resources/build/fileversion2/</file_path>
+      </file_ref>
+      <download_file get_binary="True" minimized="true">
+        <file_name></file_name>
+        <file_path>common/sectools/resources/build/fileversion2/</file_path>
+      </download_file>
+      <download_file get_binary="True" minimized="true">
+        <file_name></file_name>
+        <file_path>common/build/</file_path>
+      </download_file>
+      <file_ref get_binary="True" partition="modem" minimized="true" fastboot="modem">
+        <file_name></file_name>
+        <file_path>common/build/</file_path>
+      </file_ref>
+      <partition_file>
+        <file_name>partition_nand.xml</file_name>
+        <file_path>./</file_path>
+      </partition_file>
+    </build>
+    <build>
+      <name>glue</name>
+      <role>glue</role>
+      <chipset>MDM9150</chipset>
+      <build_id>GLUE.MDM9650_LE.1.0-00252-NOOP_TEST-1</build_id>
+      <windows_root_path>.\</windows_root_path>
+      <linux_root_path>./</linux_root_path>
+      <release_path/>
+      <image_dir>common</image_dir>
+      <buildfile_path>echo/</buildfile_path>
+      <build_command>echo ./BuildProducts.txt &gt; BuildProducts.txt</build_command>
+    </build>
+    <build>
+      <name>apps</name>
+      <role>apps</role>
+      <chipset>MDM9150</chipset>
+      <build_id>LE.UM.1.3.2-38900-9150-cv2x-2</build_id>
+      <windows_root_path cmm_root_path_var="APSS_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="APSS_BUILDROOT">./</linux_root_path>
+      <image_dir>apps_proc</image_dir>
+      <release_path/>
+      <file_ref fastboot_complete="aboot" minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </file_ref>
+      <file_ref partition="boot" minimized="true" fastboot="boot">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </file_ref>
+      <file_ref partition="system" minimized="true" fastboot="system">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </file_ref>
+	  <file_ref partition="zterw" minimized="true" fastboot="zterw">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </file_ref>		
+      <file_ref minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/sysroots/x86_64-linux/usr/sbin/</file_path>
+      </file_ref>
+      <file_ref minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/sysroots/x86_64-linux/usr/sbin/</file_path>
+      </file_ref>
+      <download_file cmm_file_var="APSSBOOT_BINARY" minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </download_file>
+      <download_file cmm_file_var="APSS_BINARY" minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </download_file>
+      <download_file cmm_file_var="APSS_BINARY" minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </download_file>
+      <download_file cmm_file_var="APSS_BINARY" minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/deploy/images/mdm9150-cv2x/</file_path>
+      </download_file>
+      <download_file cmm_file_var="APSS_ELF" minimized="true">
+        <file_name></file_name>
+        <file_path>apps_proc/poky/build/tmp-glibc/sysroots/mdm9150-cv2x/boot/</file_path>
+      </download_file>
+      <buildfile_path>./</buildfile_path>
+      <build_command>create_BuildProducts ./create_BuildProducts</build_command>
+    </build>
+    <build>
+      <name>modem</name>
+      <role>modem</role>
+      <chipset>MDM9150</chipset>
+      <build_id>MPSS.AT.2.0.1-00460-9655_GENNATCH_PACK-1</build_id>
+      <windows_root_path cmm_root_path_var="MPSS_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="MPSS_BUILDROOT">./</linux_root_path>
+      <image_dir>modem_proc</image_dir>
+      <release_path>PCT/SRC</release_path>
+      <file_ref minimized="true">
+        <file_name></file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </file_ref>
+      <file_ref get_binary="True" minimized="true">
+        <file_name></file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </file_ref>
+      <file_ref get_binary="True" minimized="true">
+        <file_name></file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </file_ref>
+      <file_ref get_binary="True" minimized="true">
+        <file_name></file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </file_ref>
+      <file_ref symbol="modem">
+        <file_name></file_name>
+        <file_path>modem_proc/build/ms/</file_path>
+      </file_ref>
+      <file_ref debug_script="load_coredump">
+        <file_name>load_coredump.cmm</file_name>
+        <file_path>modem_proc/core/debugtools/err/cmm/</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_ulog_dumps">
+        <file_name>ULogDump.cmm</file_name>
+        <file_path>modem_proc/core/services/diag/diagbuffer/scripts/</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_npa_dumps">
+        <file_name>NPADump.cmm</file_name>
+        <file_path>modem_proc/core/power/npa/scripts/</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_sleepctl_logs">
+        <file_name>SleepDump.cmm</file_name>
+        <file_path>modem_proc/core/power/sleep2.0/scripts/</file_path>
+      </file_ref>
+      <file_ref debug_script="analyze_qurt_kernel_error_info">
+        <file_name>analy_qurt_error.cmm</file_name>
+        <file_path>modem_proc/core/kernel/qurt/scripts</file_path>
+      </file_ref>
+      <download_file cmm_file_var="MPSS_BINARY" get_binary="True" pil_split="modem" minimized="true">
+        <file_name>qdsp6sw.mbn</file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </download_file>
+      <download_file cmm_file_var="MPSS_BINARY" ignore="true" get_binary="True" ubi_file="True" minimized="true">
+        <file_name>qdsp6a.qdb</file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </download_file>
+      <download_file cmm_file_var="MPSS_BINARY" get_binary="True" ubi_file="True" minimized="true">
+        <file_name>qdsp6m.qdb</file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </download_file>
+      <download_file cmm_file_var="MBA_BINARY" get_binary="True" pil_split="mba" ubi_file="True" minimized="true">
+        <file_name>mba.mbn</file_name>
+        <file_path>modem_proc/build/ms/bin/9655.gennatch.prod/</file_path>
+      </download_file>
+      <download_file cmm_file_var="MPSS_ELF" minimized="true">
+        <file_name>M9x55${modem_bid:9655.gennatch.prod}*.elf</file_name>
+        <file_path>modem_proc/build/ms/</file_path>
+      </download_file>
+      <buildfile_path>/</buildfile_path>
+      <build_command> </build_command>
+    </build>
+    <build>
+      <name>tz</name>
+      <role>tz</role>
+      <chipset>MDM9150</chipset>
+      <build_id>TZ.BF.4.0.c7-00039-M9655AAAAANAZT-1</build_id>
+      <windows_root_path cmm_root_path_var="TZ_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="TZ_BUILDROOT">./</linux_root_path>
+      <image_dir>trustzone_images</image_dir>
+      <release_path>HY11_1</release_path>
+      <download_file cmm_file_var="BOOT_TZ_MBN" fastboot_complete="true" minimized="true">
+        <file_name>tz.mbn</file_name>
+        <file_path>trustzone_images/build/ms/bin/YAFAANBA/unsigned/</file_path>
+      </download_file>
+      <download_file cmm_file_var="TZ_BINARY" get_binary="True" minimized="true">
+        <file_name>tz.mbn</file_name>
+        <file_path>trustzone_images/build/ms/bin/YAFAANBA/unsigned/</file_path>
+      </download_file>
+      <download_file cmm_file_var="DEVCFG_BINARY" get_binary="True" fastboot_complete="devcfg" minimized="true">
+        <file_name>devcfg.mbn</file_name>
+        <file_path>trustzone_images/build/ms/bin/YAFAANBA/</file_path>
+      </download_file>
+      <buildfile_path>python/</buildfile_path>
+      <build_command>python trustzone_images/build/ms/build_all.py --branch TZ.BF.4.0 CHIPSET=mdm9x55 --cleanpack &amp;&amp; mkdir temp &amp;&amp; cd trustzone_images &amp;&amp; find . -regex &quot;.*\.\(cmm\|py\|elf\|map\)&quot; -exec cp --parent {} ../temp \; &amp;&amp;cp -r build ../temp &amp;&amp; cd .. &amp;&amp; rm -rf trustzone_images &amp;&amp; mv temp trustzone_images</build_command>
+    </build>
+    <build>
+      <name>boot</name>
+      <role>boot</role>
+      <chipset>MDM9150</chipset>
+      <build_id>BOOT.BF.3.1.c3-00006-M9655AAAAANAZB-2</build_id>
+      <windows_root_path cmm_root_path_var="BOOT_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="BOOT_BUILDROOT">./</linux_root_path>
+      <image_dir>boot_images</image_dir>
+      <release_path>HY11_CompileTest</release_path>
+      <flash_programmer get_binary="True" minimized="true">
+        <file_name>NPRG9x55.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x55/nand/</file_path>
+      </flash_programmer>
+      <download_file ignore="true" get_binary="True" minimized="true">
+        <file_name>NPRG9x55.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x55/nand/</file_path>
+      </download_file>
+      <download_file ignore="true" get_binary="True" minimized="true">
+        <file_name>ENPRG9x55.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x55/nand/</file_path>
+      </download_file>
+      <download_file minimized="true">
+        <file_name>sbl1.mbn</file_name>
+        <file_path></file_path>
+      </download_file>
+      <file_ref minimized="true">
+        <file_name>hwio.cmm</file_name>
+        <file_path>boot_images/core/systemdrivers/hwio/scripts/mdm9x55/</file_path>
+      </file_ref>
+      <file_ref minimized="true">
+        <file_name>*</file_name>
+        <file_path>boot_images/core/storage/flash/tools/src/nand/</file_path>
+      </file_ref>
+      <file_ref minimized="true">
+        <file_name>hwioreg.cmm</file_name>
+        <file_path>boot_images/core/systemdrivers/hwio/scripts/mdm9x55/</file_path>
+      </file_ref>
+      <file_ref minimized="true">
+        <file_name>*</file_name>
+        <file_path>boot_images/core/storage/tools/ptool/</file_path>
+      </file_ref>
+      <file_ref minimized="true">
+        <file_name>mjsdload.cmm</file_name>
+        <file_path>boot_images/core/storage/tools/jsdcc/</file_path>
+      </file_ref>
+      <file_ref minimized="true">
+        <file_name>clk_init_9x45.cmm</file_name>
+        <file_path>boot_images/build/ms/</file_path>
+      </file_ref>
+      <download_file minimized="true">
+        <file_name>hwio.cmm</file_name>
+        <file_path>boot_images/core/systemdrivers/hwio/scripts/mdm9x55/</file_path>
+      </download_file>
+      <download_file cmm_file_var="BOOT_ELF" minimized="true">
+        <file_name>SBL1_${boot_bid:nand}.elf</file_name>
+        <file_path>boot_images/core/bsp/bootloaders/sbl1/build/mdm9x55/</file_path>
+      </download_file>
+      <download_file cmm_file_var="BOOT_BINARY" get_binary="True" fastboot_complete="sbl" minimized="true">
+        <file_name>sbl1.mbn</file_name>
+        <file_path>boot_images/build/ms/bin/9x55/nand/</file_path>
+      </download_file>
+      <buildfile_path>boot_images/build/ms/</buildfile_path>
+      <build_command>build.sh TARGET_FAMILY=9x55 --prod</build_command>
+    </build>
+    <build>
+      <name>rpm</name>
+      <role>rpm</role>
+      <chipset>MDM9150</chipset>
+      <build_id>RPM.BF.2.3-00097-M9655AAAAANAZR-4</build_id>
+      <windows_root_path cmm_root_path_var="RPM_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="RPM_BUILDROOT">./</linux_root_path>
+      <image_dir>rpm_proc</image_dir>
+      <release_path>HY11_CompileTest</release_path>
+      <file_ref minimized="true">
+        <file_name>rpm.mbn</file_name>
+        <file_path>rpm_proc/build/ms/bin/9x55/</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_ulog_dumps">
+        <file_name>rpm_ulogdump.cmm</file_name>
+        <file_path>rpm_proc/core/power/ulog/scripts</file_path>
+      </file_ref>
+      <file_ref debug_script="recover_npa_dumps">
+        <file_name>rpm_npadump.cmm</file_name>
+        <file_path>rpm_proc/core/power/npa/scripts</file_path>
+      </file_ref>
+      <file_ref debug_script="parse_merged_logs">
+        <file_name>rpm_log_bfam.py</file_name>
+        <file_path>rpm_proc/core/power/rpm/debug/scripts</file_path>
+      </file_ref>
+      <download_file cmm_file_var="RPM_ELF" minimized="true">
+        <file_name>RPM_${rpm_bid:AAAAANAZR}*.elf</file_name>
+        <file_path>rpm_proc/core/bsp/rpm/build/9x55/</file_path>
+      </download_file>
+      <download_file cmm_file_var="RPM_BINARY" get_binary="True" fastboot_complete="rpm" minimized="true">
+        <file_name>rpm.mbn</file_name>
+        <file_path>rpm_proc/build/ms/bin/9x55/</file_path>
+      </download_file>
+      <download_file>
+        <file_name>RPM_${rpm_bid:AAAAANAZR}*.elf</file_name>
+        <file_path>rpm_proc/core/bsp/rpm/build/9x55/</file_path>
+      </download_file>
+      <buildfile_path>rpm_proc/build/</buildfile_path>
+      <build_command>build_packed.sh 9x55</build_command>
+    </build>
+  </builds_flat>
+  <build_tools>
+    <tool>
+      <name>cpfatfs</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/fattool/</path>
+    </tool>
+    <tool>
+      <name>fatadd</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/fattool/</path>
+    </tool>
+    <tool>
+      <name>msp</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/ptool/</path>
+    </tool>
+    <tool>
+      <name>checksparse</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/ptool/</path>
+    </tool>
+  </build_tools>
+  <external_tools>
+    <tool>
+      <name>trace32</name>
+      <version cmm_var="T32_VER">LT150831</version>
+    </tool>
+    <tool>
+      <name>qpst</name>
+      <version>QPST 2.7.435</version>
+      <path>\\cold\tools\Installers\QPST</path>
+    </tool>
+    <tool>
+      <name>qxdm</name>
+      <version>QXDM 3.14.1007</version>
+      <path>\\cold\tools\Installers\QXDM</path>
+    </tool>
+  </external_tools>
+  <workflow>
+    <tool>
+      <name>pil-splitter.py</name>
+      <build>common</build>
+      <path>common/config/</path>
+    </tool>
+    <tool>
+      <name>nand_mbn_generator.py</name>
+      <build>boot</build>
+      <path>boot_images/core/storage/tools/nandbootmbn/</path>
+    </tool>
+    <tool>
+      <name>mkfs.ubifs</name>
+      <build>apps</build>
+      <path>apps_proc/poky/build/tmp-glibc/sysroots/x86_64-linux/usr/sbin/</path>
+    </tool>
+    <tool>
+      <name>ubinize</name>
+      <build>apps</build>
+      <path>apps_proc/poky/build/tmp-glibc/sysroots/x86_64-linux/usr/sbin/</path>
+    </tool>
+    <step type="exec">
+      <params>python @tool_name ./../config/cv2xsa/partition_nand.xml partition.mbn 128 2 262144</params>
+      <tool_name>nand_mbn_generator.py</tool_name>
+    </step>
+    <step filter="non_hlos" type="delete">
+      <destn>./NON-HLOS.ubifs</destn>
+    </step>
+    <step filter="non_hlos" type="delete">
+      <destn>./NON-HLOS.ubi</destn>
+    </step>
+    <step filter="non_hlos" type="delete">
+      <destn>./NON-HLOS.ext4</destn>
+    </step>
+    <step filter="non_hlos" type="delete">
+      <destn>./bin/image</destn>
+    </step>
+    <step type="exec">
+      <params>python @tool_name @src_file @destn_dir + @src_file_var</params>
+      <tool_name>pil-splitter.py</tool_name>
+      <src_file_vars>$[attribute:pil_split]</src_file_vars>
+      <destn_dir>./bin/image</destn_dir>
+    </step>
+    <step type="copy">
+      <src_files>$[attribute:ubi_file]</src_files>
+      <destn_dir>./bin/image</destn_dir>
+    </step>
+    <step type="copy">
+      <src_files>$[attribute:get_binary]</src_files>
+      <destn_dir>./../../binaries</destn_dir>
+    </step>
+    <step type="copy">
+      <src_files>Ver_Info.txt</src_files>
+      <destn_dir>./bin/image</destn_dir>
+    </step>
+    <step type="copy">
+      <src_files>@root_dir + modem_proc/mcfg/configs/mcfg_hw</src_files>
+      <destn_dir>bin/image/modem_pr/mcfg/configs/mcfg_hw</destn_dir>
+      <root_dir>$[build:modem]</root_dir>
+    </step>
+    <step type="exec">
+      <params>@tool_name -r @src_dir -o @destn_image -m @min_ip_op_unit_size -e @eraseblock_size -c @max_file_system_size_logical_eraseblocks -F</params>
+      <tool_name>mkfs.ubifs</tool_name>
+      <src_dir>./bin</src_dir>
+      <max_file_system_size_logical_eraseblocks>567</max_file_system_size_logical_eraseblocks>
+      <eraseblock_size>126976</eraseblock_size>
+      <min_ip_op_unit_size>2048</min_ip_op_unit_size>
+      <destn_image>NON-HLOS.ubifs</destn_image>
+    </step>
+    <step type="exec">
+      <params>@tool_name -v -o @destn_image -m @min_ip_op_unit_size -p @physical_eraseblock_size  -s @sub_page_size ./../config/my_ubi.ini</params>
+      <tool_name>ubinize</tool_name>
+      <max_logical_erase_block_count>260</max_logical_erase_block_count>
+      <min_ip_op_unit_size>2048</min_ip_op_unit_size>
+      <physical_eraseblock_size>128KiB</physical_eraseblock_size>
+      <sub_page_size>2048</sub_page_size>
+      <destn_image>NON-HLOS.ubi</destn_image>
+    </step>
+  </workflow>
+</contents>
